@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Domain.Models;
 
 namespace Domain.Gateway {
-    public interface IStockGateway {
+    public interface IStocksGateway {
         List<Stock> GetAll();
     }
 }

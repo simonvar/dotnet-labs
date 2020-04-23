@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using Domain.Gateway;
+using Domain.Models;
 
 namespace Domain.Interactor {
 
     public class LoadStocksInteractor {
 
-        private readonly IStockGateway _gateway;
+        private readonly IStocksGateway _gateway;
 
-        public LoadStocksInteractor(IStockGateway gateway) {
+        public LoadStocksInteractor(IStocksGateway gateway) {
             _gateway = gateway;
         }
 

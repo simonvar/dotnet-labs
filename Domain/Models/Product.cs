@@ -1,0 +1,5 @@
+﻿namespace Domain.Models {
+    public class Product {
+        public long Id { set; get; }
+    }
+}

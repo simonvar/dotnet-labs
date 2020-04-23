@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 
 namespace Domain.Models {
-    public class Stock {
-        public long Id { set; get; }
-
-        public string City;
+    public class Section {
         
-        public HashSet<Section> Sections { set; get; }
+        public long Id { set; get; }
+        
+        public HashSet<Product> Products { set; get; }
     }
 }

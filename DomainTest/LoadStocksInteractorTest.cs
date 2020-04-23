@@ -1,20 +1,20 @@
 using System.Collections.Generic;
-using Domain;
 using Domain.Gateway;
 using Domain.Interactor;
+using Domain.Models;
 using Moq;
 using Xunit;
 
 namespace DomainTest {
     public class LoadStocksInteractorTest {
-        private readonly Mock<IStockGateway> _emptyGateway = new Mock<IStockGateway>();
+        private readonly Mock<IStocksGateway> _emptyGateway = new Mock<IStocksGateway>();
 
         private readonly List<Stock> _list = new List<Stock> {
             new Stock {City = "city1"},
             new Stock {City = "city2"},
         };
         
-        private readonly Mock<IStockGateway> _listGateway = new Mock<IStockGateway>();
+        private readonly Mock<IStocksGateway> _listGateway = new Mock<IStocksGateway>();
 
         
         public LoadStocksInteractorTest() {
