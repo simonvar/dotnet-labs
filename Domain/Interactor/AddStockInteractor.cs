@@ -3,7 +3,12 @@ using Domain.Gateway;
 using Domain.Models;
 
 namespace Domain.Interactor {
-    public class AddStockInteractor {
+
+    public interface IAddStockInteractor {
+        public long Execute(string city);
+    }
+    
+    public class AddStockInteractor : IAddStockInteractor {
         private readonly IStocksGateway _gateway;
         public AddStockInteractor(IStocksGateway gateway) {
             _gateway = gateway;

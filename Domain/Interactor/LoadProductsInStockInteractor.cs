@@ -3,7 +3,11 @@ using Domain.Gateway;
 using Domain.Models;
 
 namespace Domain.Interactor {
-    public class LoadProductsInStockInteractor {
+    public interface ILoadProductsInStockInteractor {
+        public IEnumerable<Product> Execute(long stockId);
+    }
+    
+    public class LoadProductsInStockInteractor : ILoadProductsInStockInteractor {
         private readonly IProductsGateway _gateway;
 
         public LoadProductsInStockInteractor(IProductsGateway gateway) {

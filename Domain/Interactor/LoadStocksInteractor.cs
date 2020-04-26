@@ -4,7 +4,11 @@ using Domain.Models;
 
 namespace Domain.Interactor {
 
-    public class LoadStocksInteractor {
+    public interface ILoadStocksInteractor {
+        public IEnumerable<Stock> Execute();
+    }
+    
+    public class LoadStocksInteractor : ILoadStocksInteractor {
         private readonly IStocksGateway _gateway;
 
         public LoadStocksInteractor(IStocksGateway gateway) {

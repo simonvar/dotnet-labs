@@ -2,7 +2,11 @@
 using Domain.Models;
 
 namespace Domain.Interactor {
-    public class AddProductInStockInteractor {
+    public interface IAddProductInStockInteractor {
+        public long Execute(Product product, long stockId);
+    }
+    
+    public class AddProductInStockInteractor : IAddProductInStockInteractor {
         private readonly IProductsGateway _gateway;
         
         public AddProductInStockInteractor(IProductsGateway gateway) {
