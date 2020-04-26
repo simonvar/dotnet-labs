@@ -6,6 +6,8 @@ namespace Domain.Models {
 
         public string City;
         
-        public HashSet<Section> Sections { set; get; }
+        public HashSet<Product> Products { set; get; }
+        
+        public HashSet<Worker> Workers { set; get; }
     }
 }

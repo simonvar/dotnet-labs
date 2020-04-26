@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 namespace Domain.Models {
-    public class Section {
+    public class Worker {
         
         public long Id { set; get; }
         
-        public HashSet<Product> Products { set; get; }
+        public double Salary { set; get; }
     }
 }

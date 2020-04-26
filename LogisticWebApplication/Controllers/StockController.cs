@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace LogisticWebApplication.Controllers {
+    
     [ApiController]
     [Route("/api/stocks")]
     public class StockController : ControllerBase {
@@ -17,20 +18,8 @@ namespace LogisticWebApplication.Controllers {
 
         [HttpGet]
         public IEnumerable<Stock> Get() {
-            return new List<Stock> {
-                new Stock { Id = 1 }
-            };
+            return new List<Stock>();
         }
-        //
-        // [HttpPost]
-        // [Route("")]
-        // public Stock Post() {
-        //     var rng = new Random();
-        //     return new WeatherForecast {
-        //         Date = DateTime.Now.AddDays(5),
-        //         TemperatureC = rng.Next(-20, 55),
-        //         Summary = Summaries[rng.Next(Summaries.Length)]
-        //     };
-        // }
+        
     }
 }

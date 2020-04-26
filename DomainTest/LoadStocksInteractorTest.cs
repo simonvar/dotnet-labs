@@ -13,10 +13,10 @@ namespace DomainTest {
             new Stock {City = "city1"},
             new Stock {City = "city2"},
         };
-        
+
         private readonly Mock<IStocksGateway> _listGateway = new Mock<IStocksGateway>();
 
-        
+
         public LoadStocksInteractorTest() {
             _emptyGateway
                 .Setup(it => it.GetAll())
@@ -34,7 +34,7 @@ namespace DomainTest {
             var result = interactor.Execute();
             Assert.Empty(result);
         }
-        
+
         [Fact]
         public void ListResult() {
             var interactor = new LoadStocksInteractor(_listGateway.Object);
