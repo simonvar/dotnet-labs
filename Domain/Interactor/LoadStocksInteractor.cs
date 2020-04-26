@@ -5,7 +5,6 @@ using Domain.Models;
 namespace Domain.Interactor {
 
     public class LoadStocksInteractor {
-
         private readonly IStocksGateway _gateway;
 
         public LoadStocksInteractor(IStocksGateway gateway) {
