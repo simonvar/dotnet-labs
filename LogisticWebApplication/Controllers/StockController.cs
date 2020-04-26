@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Interactor;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,14 +12,23 @@ namespace LogisticWebApplication.Controllers {
     public class StockController : ControllerBase {
 
         private readonly ILogger<StockController> _logger;
+        private readonly IAddStockInteractor _addStock;
+        private readonly ILoadStocksInteractor _loadStocks;
 
-        public StockController(ILogger<StockController> logger) {
+        public StockController(ILogger<StockController> logger, IAddStockInteractor addStock, ILoadStocksInteractor loadStocks) {
             _logger = logger;
+            _addStock = addStock;
+            _loadStocks = loadStocks;
         }
 
         [HttpGet]
         public IEnumerable<Stock> Get() {
-            return new List<Stock>();
+            return _loadStocks.Execute();
+        }
+        
+        [HttpPut]
+        public long Put(string city) {
+            return _addStock.Execute(city);
         }
         
     }
